@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { SnackbarProvider } from 'notistack';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import BasicComponent from './screens/basic';
+import CoverComponent from './screens/cover';
+import CustomComponent from './screens/custom';
+import Experience from './screens/experience';
+import NavigationTabs from './components/NavigationTabs';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('personal');
   const [profile, setProfile] = useState({
     fullName: '',
     email: '',
     linkedinUrl: '',
     githubUrl: '',
     portfolioUrl: '',
-    coverLetter: ''
+    coverLetter: '',
+    phone: ''
   });
   const [customInfo, setCustomInfo] = useState([]);
   const [newCustomInfo, setNewCustomInfo] = useState({ key: '', value: '' });
@@ -97,236 +104,93 @@ function App() {
     setProfile({ ...profile, [field]: value });
   };
 
-  const renderPersonalInfo = () => (
-    <div className="tab-content">
-      {!isEditing ? (
-        <div className="profile-display">
-          <div className="profile-item">
-            <label>Full Name:</label>
-            <span>{profile.fullName}</span>
-            <button onClick={() => copyToClipboard(profile.fullName, 'Name')}>Copy</button>
-          </div>
 
-          <div className="profile-item">
-            <label>Email:</label>
-            <span>{profile.email}</span>
-            <button onClick={() => copyToClipboard(profile.email, 'Email')}>Copy</button>
-          </div>
-
-          <div className="profile-item">
-            <label>LinkedIn:</label>
-            <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer">
-              {profile.linkedinUrl}
-            </a>
-            <button onClick={() => copyToClipboard(profile.linkedinUrl, 'LinkedIn URL')}>Copy</button>
-          </div>
-
-          <div className="profile-item">
-            <label>GitHub:</label>
-            <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer">
-              {profile.githubUrl}
-            </a>
-            <button onClick={() => copyToClipboard(profile.githubUrl, 'GitHub URL')}>Copy</button>
-          </div>
-
-          <div className="profile-item">
-            <label>Portfolio:</label>
-            <a href={profile.portfolioUrl} target="_blank" rel="noopener noreferrer">
-              {profile.portfolioUrl}
-            </a>
-            <button onClick={() => copyToClipboard(profile.portfolioUrl, 'Portfolio URL')}>Copy</button>
-          </div>
-
-          <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit Information</button>
-        </div>
-      ) : (
-        <div className="profile-edit">
-          <div className="form-group">
-            <label>Full Name:</label>
-            <input
-              type="text"
-              value={profile.fullName}
-              onChange={(e) => handleInputChange('fullName', e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              value={profile.email}
-              onChange={(e) => handleInputChange('email', e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <label>LinkedIn URL:</label>
-            <input
-              type="url"
-              value={profile.linkedinUrl}
-              onChange={(e) => handleInputChange('linkedinUrl', e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <label>GitHub URL:</label>
-            <input
-              type="url"
-              value={profile.githubUrl}
-              onChange={(e) => handleInputChange('githubUrl', e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Portfolio URL:</label>
-            <input
-              type="url"
-              value={profile.portfolioUrl}
-              onChange={(e) => handleInputChange('portfolioUrl', e.target.value)}
-            />
-          </div>
-
-          <div className="edit-buttons">
-            <button className="save-btn" onClick={saveProfile}>Save</button>
-            <button className="cancel-btn" onClick={() => {
-              setIsEditing(false);
-              loadProfile();
-            }}>Cancel</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-
-  const renderCoverLetter = () => (
-    <div className="tab-content">
-      <div className="cover-letter-section">
-        <div className="cover-letter-display">
-          <h3>Cover Letter</h3>
-          <div className="cover-letter-text">{profile.coverLetter}</div>
-          <div className="cover-letter-actions">
-            <button onClick={() => copyToClipboard(profile.coverLetter, 'Cover Letter')}>
-              Copy Cover Letter
-            </button>
-            <button
-              className="edit-btn"
-              onClick={() => setIsEditing(true)}
-            >
-              Edit Cover Letter
-            </button>
-          </div>
-        </div>
-
-        {isEditing && (
-          <div className="cover-letter-edit">
-            <div className="form-group">
-              <label>Cover Letter:</label>
-              <textarea
-                value={profile.coverLetter}
-                onChange={(e) => handleInputChange('coverLetter', e.target.value)}
-                rows="10"
-                placeholder="Write your cover letter here..."
-              />
-            </div>
-
-            <div className="edit-buttons">
-              <button className="save-btn" onClick={saveProfile}>Save</button>
-              <button className="cancel-btn" onClick={() => {
-                setIsEditing(false);
-                loadProfile();
-              }}>Cancel</button>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-
-  const renderCustomInfo = () => (
-    <div className="tab-content">
-      <div className="custom-info-section">
-        <h3>Custom Information</h3>
-
-        <div className="add-custom-info">
-          <input
-            type="text"
-            placeholder="Key (e.g., 'Phone')"
-            value={newCustomInfo.key}
-            onChange={(e) => setNewCustomInfo({ ...newCustomInfo, key: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Value (e.g., '+1-234-567-8900')"
-            value={newCustomInfo.value}
-            onChange={(e) => setNewCustomInfo({ ...newCustomInfo, value: e.target.value })}
-          />
-          <button onClick={addCustomInfo}>Add</button>
-        </div>
-
-        <div className="custom-info-list">
-          {customInfo.length === 0 ? (
-            <p className="no-data">No custom information added yet. Add some above!</p>
-          ) : (
-            customInfo.map((item) => (
-              <div key={item.id} className="custom-info-item">
-                <label>{item.key}:</label>
-                <span>{item.value}</span>
-                <button onClick={() => copyToClipboard(item.value, item.key)}>Copy</button>
-                <button className="delete-btn" onClick={() => deleteCustomInfo(item.id)}>Delete</button>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-    </div>
-  );
 
   return (
-    <div className="App">
-      <div className="container">
-        <h1>Personal Helper - Manish Gandotra</h1>
+    <Router>
+      <SnackbarProvider
+        maxSnack={3}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        autoHideDuration={3000}
+      >
+        <div className="App">
+          <div className="container">
+            <h1>Personal Helper - Manish Gandotra</h1>
 
-        {message && <div className="message">{message}</div>}
+            {message && <div className="message">{message}</div>}
 
-        <div className="tabs-container">
-          <div className="tabs-header">
-            <button
-              className={`tab-button ${activeTab === 'personal' ? 'active' : ''}`}
-              onClick={() => {
-                setActiveTab('personal');
-                setIsEditing(false);
-              }}
-            >
-              Personal Information
-            </button>
-            <button
-              className={`tab-button ${activeTab === 'coverletter' ? 'active' : ''}`}
-              onClick={() => {
-                setActiveTab('coverletter');
-                setIsEditing(false);
-              }}
-            >
-              Cover Letter
-            </button>
-            <button
-              className={`tab-button ${activeTab === 'custom' ? 'active' : ''}`}
-              onClick={() => {
-                setActiveTab('custom');
-                setIsEditing(false);
-              }}
-            >
-              Custom Information
-            </button>
-          </div>
+            <div className="tabs-container">
+              <div className="tabs-header">
+                <NavigationTabs setIsEditing={setIsEditing} />
+              </div>
 
-          <div className="tabs-content">
-            {activeTab === 'personal' && renderPersonalInfo()}
-            {activeTab === 'coverletter' && renderCoverLetter()}
-            {activeTab === 'custom' && renderCustomInfo()}
+              <div className="tabs-content">
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <BasicComponent
+                        profile={profile}
+                        isEditing={isEditing}
+                        setIsEditing={setIsEditing}
+                        copyToClipboard={copyToClipboard}
+                        handleInputChange={handleInputChange}
+                        loadProfile={loadProfile}
+                        saveProfile={saveProfile}
+                      />
+                    }
+                  />
+                  <Route
+                    path="/experience"
+                    element={
+                      <Experience
+                        profile={profile}
+                        isEditing={isEditing}
+                        setIsEditing={setIsEditing}
+                        copyToClipboard={copyToClipboard}
+                        handleInputChange={handleInputChange}
+                        loadProfile={loadProfile}
+                        saveProfile={saveProfile}
+                      />
+                    }
+                  />
+                  <Route
+                    path="/cover"
+                    element={
+                      <CoverComponent
+                        profile={profile}
+                        isEditing={isEditing}
+                        setIsEditing={setIsEditing}
+                        copyToClipboard={copyToClipboard}
+                        handleInputChange={handleInputChange}
+                        loadProfile={loadProfile}
+                        saveProfile={saveProfile}
+                      />
+                    }
+                  />
+                  <Route
+                    path="/custom"
+                    element={
+                      <CustomComponent
+                        customInfo={customInfo}
+                        newCustomInfo={newCustomInfo}
+                        setNewCustomInfo={setNewCustomInfo}
+                        addCustomInfo={addCustomInfo}
+                        copyToClipboard={copyToClipboard}
+                        deleteCustomInfo={deleteCustomInfo}
+                      />
+                    }
+                  />
+                </Routes>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </SnackbarProvider>
+    </Router>
   );
 }
 

@@ -6,7 +6,8 @@
     "linkedinUrl": "https://www.linkedin.com/in/manish-gandotra-b53413b8/",
     "githubUrl": "https://github.com/manishgandotracoder",
     "portfolioUrl": "https://www.manishgandotra.com/",
-    "coverLetter": "Dear Sir/Madam,\n\nI am writing to express my interest in opportunities where I can contribute as a Senior Full-Stack Engineer. With over 8 years of experience delivering scalable SaaS, FinTech, and GovTech solutions, I bring deep technical expertise, proven problem-solving skills, and a strong record of driving measurable business impact.\n\nIn my current role at Termgrid, I designed and scaled a debt management platform handling over 1M records, improved performance by 30%, and reduced deployment times by 40% through automated CI/CD pipelines. Previously at Deloitte, I built real-time enterprise dashboards, cut page load times by 50%, and led a team of developers, fostering collaboration and code quality. My experience at Cognizant and NIC further strengthened my skills in building secure, high-performance systems and reducing infrastructure costs through serverless architectures.\n\nSome of my key strengths include:\n\t•\tExpertise in React, Next.js, Node.js, NestJS, and AWS for building modern, scalable applications.\n\t•\tProven ability to optimize cloud costs (up to 50%) and improve CI/CD pipelines.\n\t•\tExperience delivering cross-platform solutions with React Native and event-driven systems.\n\t•\tStrong collaboration and mentorship skills, working effectively across distributed, multicultural teams.\n\nI am particularly drawn to roles that emphasize scalability, performance, and innovation, where I can leverage my skills in AI/LLM integration, DevOps automation, and cloud-native practices to help organizations grow.\n\nI would welcome the opportunity to discuss how my background and expertise align with your company’s needs. Thank you for considering my application, and I look forward to the possibility of contributing to your team.\n\nSincerely,\nManish Gandotra\n📞 +91-8800463103\n📧 manish.gandotra.eu@gmail.com\n🌐 manishgandotra.com\n🔗 LinkedIn | GitHub"
+    "coverLetter": "Dear Sir/Madam,\n\nI am writing to express my interest in opportunities where I can contribute as a Senior Full-Stack Engineer. With over 8 years of experience delivering scalable SaaS, FinTech, and GovTech solutions, I bring deep technical expertise, proven problem-solving skills, and a strong record of driving measurable business impact.\n\nIn my current role at Termgrid, I designed and scaled a debt management platform handling over 1M records, improved performance by 30%, and reduced deployment times by 40% through automated CI/CD pipelines. Previously at Deloitte, I built real-time enterprise dashboards, cut page load times by 50%, and led a team of developers, fostering collaboration and code quality. My experience at Cognizant and NIC further strengthened my skills in building secure, high-performance systems and reducing infrastructure costs through serverless architectures.\n\nSome of my key strengths include:\n\t•\tExpertise in React, Next.js, Node.js, NestJS, and AWS for building modern, scalable applications.\n\t•\tProven ability to optimize cloud costs (up to 50%) and improve CI/CD pipelines.\n\t•\tExperience delivering cross-platform solutions with React Native and event-driven systems.\n\t•\tStrong collaboration and mentorship skills, working effectively across distributed, multicultural teams.\n\nI am particularly drawn to roles that emphasize scalability, performance, and innovation, where I can leverage my skills in AI/LLM integration, DevOps automation, and cloud-native practices to help organizations grow.\n\nI would welcome the opportunity to discuss how my background and expertise align with your company’s needs. Thank you for considering my application, and I look forward to the possibility of contributing to your team.\n\nSincerely,\nManish Gandotra\n📞 +91-8800463103\n📧 manish.gandotra.eu@gmail.com\n🌐 manishgandotra.com\n🔗 LinkedIn | GitHub",
+    "phone": "8800463103"
   },
   "customInfo": [
     {
@@ -18,6 +19,59 @@
       "id": 1759432010344,
       "key": "Why you want to change ?",
       "value": "I am looking for change because my contract is going to expire with my current company and looking for some good opportunities "
+    },
+    {
+      "id": 1759434657426,
+      "key": "Summary",
+      "value": "Senior Full-Stack Engineer with 8+ years of experience delivering high-performance SaaS, FinTech, and GovTech platforms. Proven ability to scale applications to millions of records, cut cloud costs by 50%, and improve CI/CD delivery by 40%. Experienced in React, Node.js, AWS, DevOps, and AI/LLM integration. Skilled at collaborating in multinational teams and driving business impact."
+    },
+    {
+      "id": 1759434673923,
+      "key": "Key Achievements",
+      "value": "• Scaled SaaS platforms to 1M+ records with low-latency performance. • Cut AWS costs by 50% via serverless design and optimized cloud usage. • Accelerated deployments by 40% with Jenkins + Docker pipelines. • Delivered enterprise dashboards for multinational clients, improving data visibility and decision-making. • Enhanced security & reduced support load by 40% with distributed systems and RBAC."
+    },
+    {
+      "id": 1759434765839,
+      "key": "Headline",
+      "value": "Senior Full-Stack Engineer | SaaS | FinTech | Cloud | AI"
+    }
+  ],
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Senior Full Stack Engineer",
+      "company": "Termgrid",
+      "location": "Remote",
+      "from": "2023-01",
+      "to": "Present",
+      "description": "• Designed and scaled a debt management platform handling over 1M records with low-latency performance\n• Improved system performance by 30% through database optimization and caching strategies\n• Reduced deployment times by 40% through automated CI/CD pipelines using Jenkins and Docker\n• Built responsive web applications using React, TypeScript, and modern development practices"
+    },
+    {
+      "id": 2,
+      "title": "Senior Software Engineer",
+      "company": "Deloitte",
+      "location": "Gurgaon, India",
+      "from": "2021-08",
+      "to": "2022-12",
+      "description": "• Built real-time enterprise dashboards for multinational clients, improving data visibility\n• Cut page load times by 50% through performance optimization and code splitting\n• Led a team of 4 developers, fostering collaboration and maintaining high code quality standards\n• Implemented secure authentication systems and RBAC, reducing support tickets by 40%"
+    },
+    {
+      "id": 3,
+      "title": "Software Engineer",
+      "company": "Cognizant Technology Solutions",
+      "location": "Pune, India",
+      "from": "2019-07",
+      "to": "2021-07",
+      "description": "• Developed cross-platform mobile applications using React Native\n• Built RESTful APIs using Node.js and Express.js with PostgreSQL database integration\n• Implemented automated testing strategies, improving code coverage by 60%\n• Collaborated with international teams across different time zones"
+    },
+    {
+      "id": 4,
+      "title": "Junior Software Developer",
+      "company": "National Informatics Centre (NIC)",
+      "location": "New Delhi, India",
+      "from": "2017-06",
+      "to": "2019-06",
+      "description": "• Built secure government web applications handling sensitive citizen data\n• Reduced infrastructure costs by 50% through serverless architecture implementation\n• Developed event-driven systems for real-time data processing\n• Ensured compliance with government security standards and data protection regulations"
     }
   ]
 }
