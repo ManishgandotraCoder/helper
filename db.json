@@ -1,0 +1,23 @@
+{
+  "profile": {
+    "id": 1,
+    "fullName": "Manish Gandotra",
+    "email": "manish.gandotra.eu@gmail.com",
+    "linkedinUrl": "https://www.linkedin.com/in/manish-gandotra-b53413b8/",
+    "githubUrl": "https://github.com/manishgandotracoder",
+    "portfolioUrl": "https://www.manishgandotra.com/",
+    "coverLetter": "Dear Sir/Madam,\n\nI am writing to express my interest in opportunities where I can contribute as a Senior Full-Stack Engineer. With over 8 years of experience delivering scalable SaaS, FinTech, and GovTech solutions, I bring deep technical expertise, proven problem-solving skills, and a strong record of driving measurable business impact.\n\nIn my current role at Termgrid, I designed and scaled a debt management platform handling over 1M records, improved performance by 30%, and reduced deployment times by 40% through automated CI/CD pipelines. Previously at Deloitte, I built real-time enterprise dashboards, cut page load times by 50%, and led a team of developers, fostering collaboration and code quality. My experience at Cognizant and NIC further strengthened my skills in building secure, high-performance systems and reducing infrastructure costs through serverless architectures.\n\nSome of my key strengths include:\n\t•\tExpertise in React, Next.js, Node.js, NestJS, and AWS for building modern, scalable applications.\n\t•\tProven ability to optimize cloud costs (up to 50%) and improve CI/CD pipelines.\n\t•\tExperience delivering cross-platform solutions with React Native and event-driven systems.\n\t•\tStrong collaboration and mentorship skills, working effectively across distributed, multicultural teams.\n\nI am particularly drawn to roles that emphasize scalability, performance, and innovation, where I can leverage my skills in AI/LLM integration, DevOps automation, and cloud-native practices to help organizations grow.\n\nI would welcome the opportunity to discuss how my background and expertise align with your company’s needs. Thank you for considering my application, and I look forward to the possibility of contributing to your team.\n\nSincerely,\nManish Gandotra\n📞 +91-8800463103\n📧 manish.gandotra.eu@gmail.com\n🌐 manishgandotra.com\n🔗 LinkedIn | GitHub"
+  },
+  "customInfo": [
+    {
+      "id": 1759431988077,
+      "key": "Skills",
+      "value": "React , NodeJS , Typescript , JavaScript , CSS, HTML , PosgreSQL , MySQL , Mongo DB, NextJS , NestJS"
+    },
+    {
+      "id": 1759432010344,
+      "key": "Why you want to change ?",
+      "value": "I am looking for change because my contract is going to expire with my current company and looking for some good opportunities "
+    }
+  ]
+}

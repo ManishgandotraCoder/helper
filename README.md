@@ -1,49 +1,70 @@
-# Getting Started with Create React App
+# Personal Helper - Manish Gandotra
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal helper webpage that stores and manages your professional information with easy copy functionality and customizable data storage.
+
+## Features
+
+- **Profile Management**: Store and edit your full name, email, LinkedIn, GitHub, and portfolio URLs
+- **Cover Letter**: Write and store your cover letter with easy copy functionality
+- **Copy to Clipboard**: One-click copy for all your information
+- **Custom Information**: Add any custom key-value pairs (phone number, address, etc.)
+- **Persistent Storage**: All data is saved to a JSON server and persists between sessions
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Quick Start
+
+### Option 1: Run Everything at Once (Recommended)
+```bash
+npm run dev
+```
+This will start both the React app (http://localhost:3000) and the JSON server (http://localhost:3001) simultaneously.
+
+### Option 2: Run Separately
+1. Start the JSON server (in one terminal):
+```bash
+npm run server
+```
+
+2. Start the React app (in another terminal):
+```bash
+npm start
+```
+
+## Usage
+
+1. **View Your Information**: Your profile information is displayed with easy-to-read formatting
+2. **Copy Information**: Click any "Copy" button to copy information to your clipboard
+3. **Edit Profile**: Click "Edit Profile" to modify your basic information
+4. **Add Custom Info**: Use the custom info section to add additional details like phone numbers, addresses, etc.
+5. **Delete Custom Info**: Remove any custom information you no longer need
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the React app in development mode
+- `npm run server` - Starts the JSON server on port 3001
+- `npm run dev` - Runs both the React app and JSON server concurrently
+- `npm run build` - Builds the app for production
+- `npm test` - Runs the test suite
 
-### `npm start`
+## Data Storage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Your data is stored in `db.json` file and served by json-server. The structure includes:
+- Profile information (name, email, social links, cover letter)
+- Custom information array for any additional data you want to store
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Customization
 
-### `npm test`
+You can easily customize:
+- Update your default information in `db.json`
+- Modify the styling in `src/App.css`
+- Add new fields by editing `src/App.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React 19.2.0
+- Axios for API calls
+- JSON Server for data persistence
+- Modern CSS with responsive design
 
 ### Code Splitting
 
