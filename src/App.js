@@ -35,6 +35,8 @@ function App() {
   const loadProfile = async () => {
     try {
       const response = await axios.get(`${API_BASE}/profile`);
+      console.log(response);
+
       setProfile(response.data);
     } catch (error) {
       console.error('Error loading profile:', error);
